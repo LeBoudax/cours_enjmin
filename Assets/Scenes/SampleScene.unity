@@ -943,6 +943,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 2115995461366114643, guid: 8dbe5e3fedfd7274b8332984daa3e4f0, type: 3}
+  character1: {fileID: 2115995461366114643, guid: cd4417e81811315419a5909628a88d82, type: 3}
   spawnPoint: {fileID: 0}
   timeNextSpawn: 1
   vagues: 0200000005000000
