@@ -12,6 +12,7 @@ public class Boulemagique : MonoBehaviour
         if(other != null)
         {
             other.life -= puissance;
+            ScoreScript.ScoreValue += 1;
         
             
 

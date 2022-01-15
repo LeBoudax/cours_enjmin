@@ -40,12 +40,7 @@ public class player : MonoBehaviour
             obj.position = tir.position + tir.forward;
             obj.GetComponent<Rigidbody>().AddForce(tir.forward * 30, ForceMode.Impulse);
         }
-        while (Input.GetButtonDown("Fire1"))
-        {
-            Transform obj = GameObject.Instantiate<Transform>(objectToThrow);
-            obj.position = tir.position + tir.forward;
-            obj.GetComponent<Rigidbody>().AddForce(tir.forward * 30, ForceMode.Impulse);
-        }
+      
 
 
         // sauve la rotation

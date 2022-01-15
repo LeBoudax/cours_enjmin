@@ -6,6 +6,7 @@ public class Aispawner : MonoBehaviour
 {
     [Tooltip("préfabspawn")]
     public Transform character;
+    public Transform character1;
     [Tooltip("point spawn")]
     public Transform spawnPoint;
     private float timeSpawn = 0;
@@ -30,6 +31,13 @@ public class Aispawner : MonoBehaviour
         ai.rotation = transform.rotation;
         return ai;
     }
+    Transform SpawnAI2()
+    {
+        Transform ai = GameObject.Instantiate<Transform>(character1);
+        ai.position = transform.position;
+        ai.rotation = transform.rotation;
+        return ai;
+    }
 
     void AddPichenette(Transform ai,Vector3 pichenette)
     { Rigidbody rb = ai.GetComponent<Rigidbody>();
@@ -42,11 +50,22 @@ public class Aispawner : MonoBehaviour
         time = time + Time.deltaTime;
         if (time > timeNextSpawn)
         {
-            Transform ai = SpawnAI();
+            if (ScoreScript.ScoreValue <10) 
+            { 
+                Transform ai = SpawnAI();
             Vector3 Pichenette = ai.forward * 10;
             AddPichenette(ai, Pichenette);
 
             time = 0;
+            }
+            else 
+                    { 
+                       Transform ai = SpawnAI2();
+            Vector3 Pichenette = ai.forward * 10;
+            AddPichenette(ai, Pichenette);
+
+                time = 0;
+            }
         }
     }
 
